@@ -1,0 +1,165 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            min-height: 100vh;
+            color: #e0e0e0;
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600')  no-repeat center center fixed;
+            backdrop-filter: blur(3px);
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 20, 0, 0.7); 
+            backdrop-filter: blur(5px);
+            border-bottom: 2px solid #00ff41; 
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            color: #00ff41; 
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        nav a {
+            color: #00ff41;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a:hover {
+            background: rgba(0, 255, 65, 0.2);
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 3fr; 
+            gap: 20px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        aside {
+            background: rgba(0, 10, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #00ff41;
+        }
+
+        aside h3, aside h4 {
+            color: #00ff41;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #00ff41;
+            display: inline-block;
+        }
+        aside ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        aside li {
+            padding: 5px 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.6); 
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(0, 255, 65,);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(0, 255, 65, 0.2), rgba(0, 100, 255, 0.2));
+            opacity: 0.4;
+            transition: opacity 0.5s;
+        }
+
+        .card:hover::after {
+            opacity: 0.7;
+        }
+
+        .card img {
+            width: 100%;
+            height: 140px; 
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+        
+        .card:hover img {
+            filter: grayscale(50%);
+        }
+
+        .card p {
+            padding: 10px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+            color: #fff;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 255, 65, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+            color: #00ff41;
+            border-top: 1px solid #00ff41;
+        }
+
+        body::before {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 50, 0, 0.5));
+            z-index: 1;
+            pointer-events: none;
+        }
